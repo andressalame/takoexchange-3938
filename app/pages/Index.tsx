@@ -223,13 +223,18 @@ export default function Index() {
           <div className="tk-ticker">
             <div className="tk-ticker-track">
               {ticker.map((m, i) => (
-                <span className="tk-tick" key={i}>
+                <Link
+                  className="tk-tick"
+                  key={i}
+                  to={`/perp/${m.symbol}${qs ? `?${qs}` : ""}`}
+                  title={`Trade ${m.sym}-PERP`}
+                >
                   <b>{m.sym}</b>
                   <span className="tk-tick-p">${fmtPrice(m.price)}</span>
                   <span className={m.chg >= 0 ? "up" : "down"}>
                     {m.chg >= 0 ? "▲" : "▼"} {Math.abs(m.chg).toFixed(2)}%
                   </span>
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -419,7 +424,10 @@ const LANDING_CSS = `
 .tk-ticker-track{display:inline-flex;gap:40px;padding:12px 0;animation:tkMarquee 40s linear infinite}
 .tk-ticker:hover .tk-ticker-track{animation-play-state:paused}
 @keyframes tkMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tk-tick{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-variant-numeric:tabular-nums}
+.tk-tick{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-variant-numeric:tabular-nums;
+  text-decoration:none;cursor:pointer;padding:4px 12px;border-radius:9px;transition:background .15s,transform .12s}
+.tk-tick:hover{background:rgba(124,77,255,.18);transform:translateY(-1px)}
+.tk-tick:hover b{color:#c8b3ff}
 .tk-tick b{color:#fff;font-weight:700}
 .tk-tick-p{color:#c9c9d8}
 .tk-tick .up{color:#25e0a4}
