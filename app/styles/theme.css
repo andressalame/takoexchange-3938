@@ -33,71 +33,72 @@
   --oui-line-height-normal: 1.35;
   --oui-line-height-loose: 1.5;
 
-  /* colors */
-  --oui-color-primary: 115 62 230;
-  --oui-color-primary-light: 229 250 55;
-  --oui-color-primary-darken: 0 0 0;
+  /* ===== colors — Tako premium dark (violeta de marca sobre negro neutro) ===== */
+  --oui-color-primary: 124 77 255;          /* #7C4DFF violeta de marca (pulpo) */
+  --oui-color-primary-light: 183 156 255;   /* #B79CFF (antes era lima, ahora cohesivo) */
+  --oui-color-primary-darken: 84 44 196;
   --oui-color-primary-contrast: 245 245 250;
 
- --oui-color-link: 115 62 230;
-  --oui-color-link-light: 115 62 230;
+  --oui-color-link: 124 77 255;
+  --oui-color-link-light: 183 156 255;
 
-  --oui-color-secondary: 245 245 250;
-  --oui-color-tertiary: 218 218 218;
-  --oui-color-quaternary: 218 218 218;
+  --oui-color-secondary: 245 245 248;
+  --oui-color-tertiary: 200 200 212;
+  --oui-color-quaternary: 150 150 166;
 
-  --oui-color-danger: 238 43 43;
-  --oui-color-danger-light: 250 167 188;
-  --oui-color-danger-darken: 194 15 69;
-  --oui-color-danger-contrast: 245 245 250;
+  --oui-color-danger: 255 77 94;            /* #FF4D5E rojo limpio (antes #EE2B2B) */
+  --oui-color-danger-light: 255 145 158;
+  --oui-color-danger-darken: 200 40 60;
+  --oui-color-danger-contrast: 255 255 255;
 
-  --oui-color-success: 41 233 169;
-  --oui-color-success-light: 101 240 194;
-  --oui-color-success-darken: 0 161 120;
-  --oui-color-success-contrast: 245 245 250;
+  --oui-color-success: 37 224 164;          /* #25E0A4 verde menta */
+  --oui-color-success-light: 120 240 200;
+  --oui-color-success-darken: 0 158 116;
+  --oui-color-success-contrast: 6 32 24;
 
-  --oui-color-warning: 255 209 70;
-  --oui-color-warning-light: 255 229 133;
-  --oui-color-warning-darken: 255 152 0;
-  --oui-color-warning-contrast: 245 245 250;
+  --oui-color-warning: 255 200 70;
+  --oui-color-warning-light: 255 224 133;
+  --oui-color-warning-darken: 230 150 0;
+  --oui-color-warning-contrast: 30 20 0;
 
-  --oui-color-fill: 36 32 47;
-  --oui-color-fill-active: 40 46 58;
+  --oui-color-fill: 18 18 26;
+  --oui-color-fill-active: 30 30 42;
 
---oui-color-base-1: 75 63 108;
-  --oui-color-base-2: 63 54 93;
-  --oui-color-base-3: 54 47 78;
-  --oui-color-base-4: 47 42 68;
-  --oui-color-base-5: 42 38 61;
-  --oui-color-base-6: 36 32 56;
-  --oui-color-base-7: 29 26 51;
-  --oui-color-base-8: 24 22 44;
-  --oui-color-base-9: 19 17 36;
-  --oui-color-base-10: 14 13 28;
+  /* bases: negro neutro con sutil tinte frío (NO gris-morado lavado) */
+  --oui-color-base-1: 42 42 55;
+  --oui-color-base-2: 35 35 47;
+  --oui-color-base-3: 30 30 41;
+  --oui-color-base-4: 25 25 35;
+  --oui-color-base-5: 21 21 30;
+  --oui-color-base-6: 17 17 25;
+  --oui-color-base-7: 14 14 21;
+  --oui-color-base-8: 11 11 17;
+  --oui-color-base-9: 8 8 13;
+  --oui-color-base-10: 5 5 9;
 
-  --oui-color-base-foreground: 245 245 250;
-  --oui-color-line: 245 245 250;
+  --oui-color-base-foreground: 244 244 250;
+  --oui-color-line: 240 240 248;
 
-  --oui-color-trading-loss: 217 139 139;        /* red sell text */
+  --oui-color-trading-loss: 255 110 122;        /* red sell text */
   --oui-color-trading-loss-contrast: 255 255 255;
-  --oui-color-trading-profit: 71 199 176;        /* green buy text */
-  --oui-color-trading-profit-contrast: 255 255 255;
+  --oui-color-trading-profit: 45 220 165;        /* green buy text */
+  --oui-color-trading-profit-contrast: 6 32 24;
 
-  /* gradients */
---oui-gradient-primary-start: 74 41 143;
-  --oui-gradient-primary-end: 132 93 206;
+  /* gradients — octopus blue -> violet -> magenta */
+  --oui-gradient-primary-start: 77 107 255;
+  --oui-gradient-primary-end: 150 77 255;
 
-  --oui-gradient-secondary-start: 63 54 93;
-  --oui-gradient-secondary-end: 98 57 176;
+  --oui-gradient-secondary-start: 30 30 41;
+  --oui-gradient-secondary-end: 124 77 255;
 
-  --oui-gradient-success-start: 1 83 68;
-  --oui-gradient-success-end: 41 223 169;
+  --oui-gradient-success-start: 0 90 70;
+  --oui-gradient-success-end: 37 224 164;
 
-  --oui-gradient-danger-start: 153 24 76;
-  --oui-gradient-danger-end: 245 97 139;
+  --oui-gradient-danger-start: 150 30 60;
+  --oui-gradient-danger-end: 255 90 110;
 
-  --oui-gradient-brand-start: 208 1 255;
-  --oui-gradient-brand-end: 98 57 176;
+  --oui-gradient-brand-start: 77 107 255;   /* #4D6BFF azul */
+  --oui-gradient-brand-end: 178 60 255;     /* #B23CFF magenta */
   --oui-gradient-brand-stop-start: 6.62%;
   --oui-gradient-brand-stop-end: 86.5%;
   --oui-gradient-brand-angle: 17.44deg;
@@ -105,8 +106,8 @@
   --oui-gradient-warning-start: 152 58 8;
   --oui-gradient-warning-end: 255 209 70;
 
-  --oui-gradient-neutral-start: 27 29 24;
-  --oui-gradient-neutral-end: 38 41 46;
+  --oui-gradient-neutral-start: 12 12 18;
+  --oui-gradient-neutral-end: 22 22 31;
 
   /* rounded */
   --oui-rounded-sm: 0px;
