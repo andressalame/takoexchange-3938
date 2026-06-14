@@ -217,7 +217,11 @@ export default function Index() {
             className="tk-logo"
           />
           <nav className="tk-nav-links">
+            <Link to={appLink}>Trade</Link>
+            <Link to={swapLink}>Swap</Link>
             <Link to="/markets">Markets</Link>
+            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/rewards">Rewards</Link>
             <Link to="/vaults">Vaults</Link>
             <Link to="/leaderboard">Leaderboard</Link>
           </nav>
@@ -407,9 +411,11 @@ const LANDING_CSS = `
   padding:14px clamp(16px,5vw,56px);backdrop-filter:blur(12px);
   background:rgba(0,0,0,.6);border-bottom:1px solid #18181c}
 .tk-logo{height:30px;width:auto;display:block}
-.tk-nav-links{display:flex;gap:26px;margin-left:14px;flex:1}
-.tk-nav-links a{color:rgba(245,245,250,.7);text-decoration:none;font-size:15px;font-weight:500;transition:color .15s}
+.tk-nav-links{display:flex;gap:22px;margin-left:14px;flex:1;min-width:0;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.tk-nav-links::-webkit-scrollbar{display:none}
+.tk-nav-links a{color:rgba(245,245,250,.72);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .15s;flex:0 0 auto}
 .tk-nav-links a:hover{color:#fff}
+@media(max-width:560px){.tk-nav-links{display:none}}
 
 .tk-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:12px;
   font-weight:700;font-size:15px;text-decoration:none;color:#fff;white-space:nowrap;letter-spacing:.01em;
@@ -496,7 +502,6 @@ const LANDING_CSS = `
 
 @media(max-width:860px){
   .tk-grid-cards{grid-template-columns:1fr}
-  .tk-nav-links{display:none}
   .tk-orb{filter:blur(50px)}
 }
 @media(prefers-reduced-motion:reduce){
