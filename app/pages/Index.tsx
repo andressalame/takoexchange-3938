@@ -185,11 +185,19 @@ export default function Index() {
   return (
     <>
       {renderSEOTags(pageMeta, appName)}
-      {appDescription && (
-        <Helmet>
-          <meta name="description" content={appDescription} />
-        </Helmet>
-      )}
+      <Helmet>
+        {appDescription && <meta name="description" content={appDescription} />}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <style>{LANDING_CSS}</style>
       <div className="tk">
         {/* BACKDROP */}
@@ -218,7 +226,7 @@ export default function Index() {
           </Link>
         </header>
 
-        {/* LIVE TICKER */}
+        {/* LIVE TICKER (clickable) */}
         {ticker.length > 0 && (
           <div className="tk-ticker">
             <div className="tk-ticker-track">
@@ -372,116 +380,116 @@ export default function Index() {
 }
 
 const LANDING_CSS = `
-.tk{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;background:#06060b;color:#f4f4f8;
-  font-family:'Manrope',system-ui,sans-serif}
-/* backdrop layers */
-.tk-aurora{position:fixed;inset:-25% -10% auto -10%;height:95vh;z-index:0;pointer-events:none;opacity:.95;
+.tk{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;background:#000;color:#f5f5fa;
+  font-family:'Inter',system-ui,sans-serif}
+.tk h1,.tk h2,.tk .tk-stat b,.tk .tk-btn,.tk-kicker,.tk-eyebrow,.tk-card-t,.tk-tick b{font-family:'Outfit','Inter',system-ui,sans-serif}
+/* backdrop layers — brand purple #733ee6 */
+.tk-aurora{position:fixed;inset:-25% -10% auto -10%;height:95vh;z-index:0;pointer-events:none;opacity:.85;
   background:
-    radial-gradient(38% 48% at 20% 16%, rgba(77,107,255,.34), transparent 70%),
-    radial-gradient(36% 44% at 82% 10%, rgba(178,60,255,.30), transparent 70%),
-    radial-gradient(52% 50% at 50% -4%, rgba(124,77,255,.34), transparent 72%);
+    radial-gradient(38% 48% at 20% 16%, rgba(115,62,230,.34), transparent 70%),
+    radial-gradient(36% 44% at 82% 10%, rgba(133,87,238,.26), transparent 70%),
+    radial-gradient(52% 50% at 50% -4%, rgba(115,62,230,.36), transparent 72%);
   animation:tkAurora 16s ease-in-out infinite alternate}
 @keyframes tkAurora{0%{transform:translate3d(-3%,0,0) scale(1)}100%{transform:translate3d(4%,2%,0) scale(1.14)}}
-.tk-orb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.32;z-index:0;pointer-events:none;animation:tkFloat 15s ease-in-out infinite}
-.tk-orb.o1{width:360px;height:360px;background:#4d6bff;top:6%;left:-70px}
-.tk-orb.o2{width:320px;height:320px;background:#b23cff;top:24%;right:-60px;animation-delay:-4s}
-.tk-orb.o3{width:280px;height:280px;background:#7c4dff;top:48%;left:38%;animation-delay:-8s;opacity:.22}
+.tk-orb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.28;z-index:0;pointer-events:none;animation:tkFloat 15s ease-in-out infinite}
+.tk-orb.o1{width:360px;height:360px;background:#733ee6;top:6%;left:-70px}
+.tk-orb.o2{width:320px;height:320px;background:#8557ee;top:24%;right:-60px;animation-delay:-4s}
+.tk-orb.o3{width:280px;height:280px;background:#5b3ed0;top:48%;left:38%;animation-delay:-8s;opacity:.2}
 @keyframes tkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(46px)}}
-.tk-grid{position:fixed;bottom:0;left:0;right:0;height:60vh;z-index:0;pointer-events:none;perspective:340px;opacity:.45;
+.tk-grid{position:fixed;bottom:0;left:0;right:0;height:60vh;z-index:0;pointer-events:none;perspective:340px;opacity:.4;
   -webkit-mask-image:linear-gradient(to top,#000 0%,transparent 92%);mask-image:linear-gradient(to top,#000 0%,transparent 92%)}
 .tk-grid-inner{position:absolute;inset:0;transform:rotateX(74deg);transform-origin:bottom center;
-  background-image:linear-gradient(rgba(124,77,255,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(124,77,255,.45) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(115,62,230,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(115,62,230,.42) 1px,transparent 1px);
   background-size:46px 46px;animation:tkGridMove 2.4s linear infinite}
 @keyframes tkGridMove{0%{background-position:0 0}100%{background-position:0 46px}}
 
 .tk-nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;
   padding:14px clamp(16px,5vw,56px);backdrop-filter:blur(12px);
-  background:rgba(6,6,11,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+  background:rgba(0,0,0,.6);border-bottom:1px solid #18181c}
 .tk-logo{height:30px;width:auto;display:block}
 .tk-nav-links{display:flex;gap:26px;margin-left:14px;flex:1}
-.tk-nav-links a{color:#b9b9cc;text-decoration:none;font-size:15px;font-weight:500;transition:color .15s}
+.tk-nav-links a{color:rgba(245,245,250,.7);text-decoration:none;font-size:15px;font-weight:500;transition:color .15s}
 .tk-nav-links a:hover{color:#fff}
 
 .tk-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:12px;
-  font-weight:700;font-size:15px;text-decoration:none;color:#fff;white-space:nowrap;
-  background:linear-gradient(92deg,#4d6bff,#7c4dff 52%,#b23cff);box-shadow:0 8px 26px rgba(124,77,255,.35);
+  font-weight:700;font-size:15px;text-decoration:none;color:#fff;white-space:nowrap;letter-spacing:.01em;
+  background:linear-gradient(92deg,#733ee6,#8557ee);box-shadow:0 8px 26px rgba(115,62,230,.4);
   transition:transform .1s ease,filter .15s ease;cursor:pointer}
-.tk-btn:hover{filter:brightness(1.09);transform:translateY(-1px)}
+.tk-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .tk-btn-sm{padding:9px 18px;font-size:14px;border-radius:10px}
-/* big hero CTAs */
-.tk-btn-hero{position:relative;overflow:hidden;padding:19px 42px;font-size:19px;border-radius:15px;
+.tk-btn-hero{position:relative;overflow:hidden;padding:18px 40px;font-size:17px;border-radius:14px;text-transform:uppercase;letter-spacing:.03em;
   animation:tkPulse 2.6s ease-in-out infinite}
 .tk-btn-hero::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:tkShine 3.4s ease-in-out infinite}
-@keyframes tkPulse{0%,100%{box-shadow:0 10px 30px rgba(124,77,255,.4),0 0 0 0 rgba(124,77,255,.45)}50%{box-shadow:0 16px 50px rgba(124,77,255,.65),0 0 40px 7px rgba(124,77,255,.4)}}
+@keyframes tkPulse{0%,100%{box-shadow:0 10px 30px rgba(115,62,230,.45),0 0 0 0 rgba(115,62,230,.45)}50%{box-shadow:0 16px 50px rgba(115,62,230,.7),0 0 40px 7px rgba(115,62,230,.4)}}
 @keyframes tkShine{0%{left:-70%}45%,100%{left:140%}}
-.tk-btn-hero2{padding:19px 38px;font-size:19px;border-radius:15px;background:transparent;color:#eae6ff;
-  border:1.5px solid rgba(150,120,255,.55);box-shadow:0 0 24px rgba(124,77,255,.16) inset}
-.tk-btn-hero2:hover{border-color:#b79cff;background:rgba(124,77,255,.12)}
+.tk-btn-hero2{padding:18px 36px;font-size:17px;border-radius:14px;background:transparent;color:#eee6ff;text-transform:uppercase;letter-spacing:.03em;
+  border:1.5px solid rgba(133,87,238,.6);box-shadow:0 0 24px rgba(115,62,230,.14) inset}
+.tk-btn-hero2:hover{border-color:#8557ee;background:rgba(115,62,230,.14)}
 
-.tk-ticker{position:relative;z-index:5;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);
-  background:rgba(255,255,255,.025);white-space:nowrap}
-.tk-ticker-track{display:inline-flex;gap:40px;padding:12px 0;animation:tkMarquee 40s linear infinite}
+.tk-ticker{position:relative;z-index:5;overflow:hidden;border-bottom:1px solid #18181c;
+  background:rgba(245,245,250,.02);white-space:nowrap}
+.tk-ticker-track{display:inline-flex;gap:34px;padding:10px 0;animation:tkMarquee 40s linear infinite}
 .tk-ticker:hover .tk-ticker-track{animation-play-state:paused}
 @keyframes tkMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .tk-tick{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-variant-numeric:tabular-nums;
   text-decoration:none;cursor:pointer;padding:4px 12px;border-radius:9px;transition:background .15s,transform .12s}
-.tk-tick:hover{background:rgba(124,77,255,.18);transform:translateY(-1px)}
-.tk-tick:hover b{color:#c8b3ff}
-.tk-tick b{color:#fff;font-weight:700}
+.tk-tick:hover{background:rgba(115,62,230,.18);transform:translateY(-1px)}
+.tk-tick:hover b{color:#b79cff}
+.tk-tick b{color:#fff;font-weight:700;letter-spacing:.02em}
 .tk-tick-p{color:#c9c9d8}
 .tk-tick .up{color:#25e0a4}
 .tk-tick .down{color:#ff5d6c}
 
 .tk-hero{position:relative;z-index:5;text-align:center;max-width:1000px;margin:0 auto;
   padding:clamp(58px,12vh,140px) clamp(18px,5vw,40px) clamp(44px,8vh,90px)}
-.tk-kicker{display:inline-flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#c3aaff;font-weight:600;margin-bottom:26px;
-  padding:7px 16px;border:1px solid rgba(150,120,255,.3);border-radius:999px;background:rgba(124,77,255,.08)}
+.tk-kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c3aaff;font-weight:600;margin-bottom:26px;
+  padding:7px 16px;border:1px solid rgba(133,87,238,.32);border-radius:999px;background:rgba(115,62,230,.1)}
 .tk-dot{width:8px;height:8px;border-radius:50%;background:#25e0a4;box-shadow:0 0 10px #25e0a4;animation:tkBlink 1.6s ease-in-out infinite}
 @keyframes tkBlink{50%{opacity:.35}}
-.tk-h1{font-size:clamp(52px,11vw,118px);line-height:.96;font-weight:800;letter-spacing:-.03em;margin:0 0 26px}
-.tk-grad{background:linear-gradient(95deg,#5b86ff,#9a6bff 32%,#c84dff 58%,#5b86ff 100%);background-size:220% auto;
+.tk-h1{font-size:clamp(52px,11vw,120px);line-height:.94;font-weight:900;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 26px}
+.tk-grad{background:linear-gradient(95deg,#a888ff,#733ee6 40%,#c4a6ff 72%,#a888ff);background-size:220% auto;
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:tkShimmer 6s linear infinite}
 @keyframes tkShimmer{to{background-position:220% center}}
-.tk-sub{font-size:clamp(16px,2.2vw,22px);line-height:1.55;color:#a3a3ba;max-width:620px;margin:0 auto 38px}
+.tk-sub{font-size:clamp(16px,2.2vw,22px);line-height:1.55;color:rgba(245,245,250,.62);max-width:600px;margin:0 auto 38px}
 .tk-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
 .tk-stats{display:flex;justify-content:center;gap:clamp(24px,7vw,72px);margin-top:66px;flex-wrap:wrap}
 .tk-stat{display:flex;flex-direction:column;gap:5px}
-.tk-stat b{font-size:clamp(32px,5vw,56px);font-weight:800;background:linear-gradient(92deg,#7c4dff,#c84dff);
+.tk-stat b{font-size:clamp(34px,5vw,58px);font-weight:800;background:linear-gradient(92deg,#8557ee,#b79cff);
   -webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;line-height:1}
-.tk-stat span{font-size:13px;color:#8a8aa0;letter-spacing:.05em}
+.tk-stat span{font-size:13px;color:rgba(245,245,250,.5);letter-spacing:.05em}
 
 .tk-section{position:relative;z-index:5;max-width:1140px;margin:0 auto;padding:clamp(54px,10vh,110px) clamp(18px,5vw,40px)}
 .tk-eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#9a6bff;font-weight:700;margin-bottom:14px;text-align:center}
-.tk-h2{font-size:clamp(32px,5.5vw,58px);font-weight:800;letter-spacing:-.025em;text-align:center;margin:0 0 14px;line-height:1.02}
-.tk-sub2{text-align:center;color:#a3a3ba;font-size:clamp(15px,1.9vw,18px);max-width:560px;margin:0 auto 18px;line-height:1.5}
+.tk-h2{font-size:clamp(32px,5.5vw,60px);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;text-align:center;margin:0 0 14px;line-height:1}
+.tk-sub2{text-align:center;color:rgba(245,245,250,.62);font-size:clamp(15px,1.9vw,18px);max-width:560px;margin:0 auto 18px;line-height:1.5}
 
 .tk-grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
-.tk-card{background:linear-gradient(180deg,rgba(24,24,34,.7),rgba(11,11,18,.7));backdrop-filter:blur(4px);
-  border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-.tk-card:hover{transform:translateY(-5px);border-color:rgba(124,77,255,.6);box-shadow:0 22px 60px rgba(124,77,255,.18)}
+.tk-card{background:#0a0a0c;border:1px solid #18181c;border-radius:20px;padding:30px;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.tk-card:hover{transform:translateY(-5px);border-color:rgba(115,62,230,.6);box-shadow:0 22px 60px rgba(115,62,230,.18)}
 .tk-ico{width:32px;height:32px;color:#9a6bff;margin-bottom:16px}
-.tk-card-t{font-weight:700;font-size:19px;margin-bottom:8px}
-.tk-card-d{font-size:15px;line-height:1.55;color:#9090a6}
+.tk-card-t{font-weight:700;font-size:19px;margin-bottom:8px;letter-spacing:.01em}
+.tk-card-d{font-size:15px;line-height:1.55;color:rgba(245,245,250,.55)}
 
 .tk-chains{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:36px}
-.tk-chain{padding:11px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.03);color:#c8c8d8;font-size:15px;font-weight:500;transition:.15s}
-.tk-chain:hover{border-color:rgba(124,77,255,.6);color:#fff;background:rgba(124,77,255,.1)}
+.tk-chain{padding:11px 20px;border-radius:999px;border:1px solid #18181c;
+  background:rgba(245,245,250,.03);color:rgba(245,245,250,.8);font-size:15px;font-weight:500;transition:.15s}
+.tk-chain:hover{border-color:rgba(115,62,230,.6);color:#fff;background:rgba(115,62,230,.1)}
 
 .tk-final{position:relative;z-index:5;text-align:center;max-width:820px;margin:0 auto;
-  padding:clamp(64px,12vh,130px) clamp(18px,5vw,40px);border-top:1px solid rgba(255,255,255,.06)}
-.tk-final-h{font-size:clamp(38px,7vw,76px);font-weight:800;letter-spacing:-.03em;line-height:1;margin:0 0 14px}
+  padding:clamp(64px,12vh,130px) clamp(18px,5vw,40px);border-top:1px solid #18181c}
+.tk-final-h{font-family:'Outfit','Inter',sans-serif;font-size:clamp(38px,7vw,78px);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;line-height:1;margin:0 0 14px}
 .tk-final .tk-cta{margin-top:26px}
 
-.tk-foot{position:relative;z-index:5;border-top:1px solid rgba(255,255,255,.06);
+.tk-foot{position:relative;z-index:5;border-top:1px solid #18181c;
   padding:30px clamp(18px,5vw,56px);display:flex;flex-direction:column;gap:14px}
 .tk-foot-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .tk-foot-links{display:flex;gap:22px;flex-wrap:wrap}
 .tk-foot-links a{color:#b79cff;text-decoration:none;font-weight:600;font-size:14px}
 .tk-foot-links a:hover{color:#fff}
-.tk-foot-meta{color:#6f6f86;font-size:12.5px}
+.tk-foot-meta{color:rgba(245,245,250,.35);font-size:12.5px}
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}

@@ -34,12 +34,12 @@
   --oui-line-height-loose: 1.5;
 
   /* ===== colors — Tako premium dark (violeta de marca sobre negro neutro) ===== */
-  --oui-color-primary: 124 77 255;          /* #7C4DFF violeta de marca (pulpo) */
+  --oui-color-primary: 115 62 230;          /* #733EE6 morado de marca (= takocrypto.com) */
   --oui-color-primary-light: 183 156 255;   /* #B79CFF (antes era lima, ahora cohesivo) */
   --oui-color-primary-darken: 84 44 196;
   --oui-color-primary-contrast: 245 245 250;
 
-  --oui-color-link: 124 77 255;
+  --oui-color-link: 115 62 230;
   --oui-color-link-light: 183 156 255;
 
   --oui-color-secondary: 245 245 248;
@@ -85,8 +85,8 @@
   --oui-color-trading-profit-contrast: 6 32 24;
 
   /* gradients — octopus blue -> violet -> magenta */
-  --oui-gradient-primary-start: 77 107 255;
-  --oui-gradient-primary-end: 150 77 255;
+  --oui-gradient-primary-start: 115 62 230;
+  --oui-gradient-primary-end: 162 124 240;
 
   --oui-gradient-secondary-start: 30 30 41;
   --oui-gradient-secondary-end: 124 77 255;
@@ -97,8 +97,8 @@
   --oui-gradient-danger-start: 150 30 60;
   --oui-gradient-danger-end: 255 90 110;
 
-  --oui-gradient-brand-start: 77 107 255;   /* #4D6BFF azul */
-  --oui-gradient-brand-end: 178 60 255;     /* #B23CFF magenta */
+  --oui-gradient-brand-start: 115 62 230;   /* #733EE6 morado de marca */
+  --oui-gradient-brand-end: 162 124 240;     /* #A27CF0 */
   --oui-gradient-brand-stop-start: 6.62%;
   --oui-gradient-brand-stop-end: 86.5%;
   --oui-gradient-brand-angle: 17.44deg;
