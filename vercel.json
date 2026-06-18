@@ -1,0 +1,7 @@
+{
+  "buildCommand": "yarn build",
+  "outputDirectory": "build/client",
+  "installCommand": "yarn install --frozen-lockfile",
+  "framework": null,
+  "cleanUrls": true
+}
