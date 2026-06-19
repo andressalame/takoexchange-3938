@@ -30,7 +30,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_SEO_SITE_URL": "https://takodex.com",
   "VITE_SEO_SITE_LANGUAGE": "zh",
   "VITE_SEO_SITE_LOCALE": "zh_TW",
-  "VITE_SEO_TWITTER_HANDLE": "@takocryptodex",
+  "VITE_SEO_TWITTER_HANDLE": "@TakoExchange",
   "VITE_SEO_THEME_COLOR": "#121826",
   "VITE_SEO_KEYWORDS": "Tako DEX, 永續合約, 去中心化交易所, perp DEX, Orderly DEX, 加密貨幣交易, crypto perpetuals, 低手續費",
   "VITE_AVAILABLE_LANGUAGES": "en,zh,ja,es,ko,vi,de,fr,ru,id,tr,it,pt,uk,pl,nl,tc",
