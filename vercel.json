@@ -3,6 +3,5 @@
   "outputDirectory": "build/client",
   "installCommand": "yarn install --frozen-lockfile",
   "framework": null,
-  "cleanUrls": true,
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
